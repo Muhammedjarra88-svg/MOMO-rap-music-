@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Momo Rap - Player</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Momo Rap - Player</h1>
+      <div class="controls-top">
+        <input id="fileInput" type="file" accept="audio/*" multiple />
+        <label id="dropLabel">o trascina i file qui</label>
+      </div>
+    </header>
+
+    <main>
+      <section class="player">
+        <canvas id="waveform" width="800" height="120"></canvas>
+        <div class="track-info">
+          <div id="trackTitle">Nessuna traccia caricata</div>
+          <div id="time">00:00 / 00:00</div>
+        </div>
+        <div class="controls">
+          <button id="prevBtn">⏮</button>
+          <button id="playPauseBtn">▶️</button>
+          <button id="nextBtn">⏭</button>
+          <input id="seek" type="range" min="0" max="100" value="0" />
+        </div>
+
+        <div class="playback-options">
+          <label>Crossfade: <span id="crossfadeVal">1.0s</span></label>
+          <input id="crossfade" type="range" min="0" max="3" step="0.1" value="1" />
+          <label>EQ Preset:</label>
+          <select id="eqPreset">
+            <option value="flat">Flat</option>
+            <option value="trap">Trap</option>
+            <option value="afrobeats">Afrobeats</option>
+          </select>
+        </div>
+      </section>
+
+      <aside class="playlist">
+        <h2>Playlist</h2>
+        <ul id="playlist"></ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
