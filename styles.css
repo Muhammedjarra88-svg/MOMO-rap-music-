@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #051c08);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1db954;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Card del Player */
+.player-card {
+    background: rgba(25, 25, 25, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.album-art {
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(145deg, #222, #111);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 3px solid rgba(29, 185, 84, 0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.album-art i {
+    font-size: 50px;
+    color: #1db954;
+}
+
+.spinning-icon {
+    animation: spin 10s linear infinite;
+    animation-play-state: paused;
+}
+
+.spinning-icon.playing {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.track-info {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.track-info h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-info p {
+    font-size: 13px;
+    color: #b3b3b3;
+}
+
+/* Barra di avanzamento */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #404040;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #1db954;
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-stamps {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+/* Controlli */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.1s, color 0.2s;
+}
+
+.control-btn:hover {
+    color: #1db954;
+    transform: scale(1.1);
+}
+
+.play-main {
+    width: 55px;
+    height: 55px;
+    background: #1db954;
+    color: #000;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4);
+}
+
+.play-main:hover {
+    background: #1ed760;
+    color: #000;
+}
+
+/* Playlist */
+.playlist-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    padding-left: 4px;
+}
+
+.playlist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.playlist-item {
+    background: rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.playlist-item:hover {
+    background: rgba(40, 40, 40, 0.8);
+    border-color: rgba(29, 185, 84, 0.3);
+}
+
+.playlist-item.active {
+    background: rgba(29, 185, 84, 0.15);
+    border-color: #1db954;
+}
+
+.song-icon {
+    width: 36px;
+    height: 36px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1db954;
+    font-size: 14px;
+}
+
+.song-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.song-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.song-author {
+    font-size: 11px;
+    color: #888;
+}
+
+.play-indicator {
+    color: #888;
+    font-size: 12px;
+}
+
+.playlist-item.active .play-indicator {
+    color: #1db954;
+}
